@@ -5,12 +5,60 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    position: relative;
 }
 
 #text-container {
     text-align: center;
 }
 
-#random-text {
+#button-container {
+    position: fixed; /* Use fixed position to place it at the bottom right */
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.random-text {
     transition: all 0.5s ease;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}   
+
+button, input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, input:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active, input:active {
+    animation: clickAnimation 0.2s;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+@keyframes clickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
 }
