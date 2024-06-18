@@ -12,7 +12,26 @@ function getRandomSize() {
 }
 
 function changeTextProperties() {
-    const textElement = document.getElementById('random-text');
-    textElement.style.color = getRandomColor();
-    textElement.style.fontSize = getRandomSize();
+    const textElements = document.querySelectorAll('.random-text');
+    textElements.forEach(textElement => {
+        textElement.style.color = getRandomColor();
+        textElement.style.fontSize = getRandomSize();
+    });
+}
+
+let autoChangeInterval = null;
+
+function startAutoChange() {
+    const intervalInput = document.getElementById('interval');
+    const interval = parseInt(intervalInput.value, 10) * 1000; // Convert seconds to milliseconds
+    if (autoChangeInterval) {
+        clearInterval(autoChangeInterval);
+    }
+    autoChangeInterval = setInterval(changeTextProperties, interval);
+}
+
+function stopAutoChange() {
+    if (autoChangeInterval) {
+        clearInterval(autoChangeInterval);
+    }
 }
