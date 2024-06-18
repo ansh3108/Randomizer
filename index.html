@@ -8,8 +8,15 @@
 </head>
 <body>
     <div id="text-container">
-        <p id="random-text">This text will change size and color randomly.</p>
+        <p class="random-text">This text will change size and color randomly.</p>
+        <p class="random-text">Watch me change too!</p>
+    </div>
+    <div id="button-container">
         <button onclick="changeTextProperties()">Change Text Properties</button>
+        <label for="interval">Change Interval (seconds):</label>
+        <input type="number" id="interval" name="interval" min="1" max="10" value="5">
+        <button onclick="startAutoChange()">Start Auto Change</button>
+        <button onclick="stopAutoChange()">Stop Auto Change</button>
     </div>
     <script src="script.js"></script>
 </body>
